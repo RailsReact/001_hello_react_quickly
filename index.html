@@ -18,7 +18,13 @@
       }
     }
     ReactDOM.render(
-      React.createElement(HelloWord, null),
+      React.createElement(
+        'div', 
+        null,
+        React.createElement(HelloWord),
+        React.createElement(HelloWord),
+        React.createElement(HelloWord)
+      ),
       document.getElementById('content')
     )
   </script>  
