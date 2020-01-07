@@ -11,19 +11,34 @@
 <body>
   <div id="content"></div>
   <script type="text/javascript">
-    const banana= React.createElement('h1', null, 'Hello React!')
     class HelloWord extends React.Component {
       render(){
-        return React.createElement('div', null, banana, banana)
+        return React.createElement(
+          'h1', 
+          null, 
+          'Hello ' + this.props.frameworkName + ' world!!!'
+        )
       }
     }
     ReactDOM.render(
       React.createElement(
         'div', 
         null,
-        React.createElement(HelloWord),
-        React.createElement(HelloWord),
-        React.createElement(HelloWord)
+        React.createElement(HelloWord, {
+          id: 'ember',
+          frameworkName: 'Ember.js',
+          title: 'A framework for creating ambitions web applications.'
+        }),
+        React.createElement(HelloWord, {
+          id: 'backbone',
+          frameworkName: 'Backbone.js',
+          title: 'Backbone.js gives structure to web application...'
+        }),
+        React.createElement(HelloWord, {
+          id: 'angular',
+          frameworkName: 'Angular.js',
+          title: 'Superheroic JavaScript MVW Framework'
+        })
       ),
       document.getElementById('content')
     )
